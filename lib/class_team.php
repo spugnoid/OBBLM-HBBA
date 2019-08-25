@@ -27,7 +27,7 @@ class Team
     public $value             = 0;
     public $tv                = 0; # Identical.
     public $ff_bought         = 0;
-    public $ff                = 0;  // Added to adjust won FF for redrafting
+   // public $ff                = 0;  // Added to adjust won FF for redrafting
 
     // MySQL stored initials for imported teams
     public $won_0    = 0;
@@ -250,20 +250,18 @@ class Team
     }
     
     public function dffactor($delta) {
-        /*
-         * Add a delta to team's Fan Factor.
-         */
-        $query = "UPDATE mv_teams SET ff = ff + $delta WHERE f_tid = $this->team_id";
+    /*
+    * Add a delta to team's won Fan Factor. For Redraft Purposes
+    */
+        $query = "UPDATE mv_teams SET ff = GREATEST(ff + $delta, 0) WHERE f_tid = $this->team_id";
         if (mysql_query($query)) {
-            $this->ff += $delta;
-            return true;
+        $this->ff += $delta;
+        return true;
         } else {
-            return false;
-        }      
+        return false;
+        }
+        
     }
-    
-    
-    
 
 	public function setff_bought($integer) {
         /**
