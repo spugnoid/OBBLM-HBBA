@@ -1,0 +1,18 @@
+f2 {display: none;}
+
+body {
+    background: #fff url(http://hbba.obblm.com/TEST_Environment/images/HBBA/fullPitch.png) 
+    repeat-y;
+    font: 12px Tahoma;
+}
+
+div.banner {
+     background-image: url(http://hbba.obblm.com/TEST_Environment/images/HBBA/hbbaLogoBanner.png);
+}
+
+div.boxWide, table {
+    background-color: rgba(255,255,255,1);
+}
+
+ul.css3menu1 li:hover>a, ul.css3menu1 li > a.pressed {
+    background-color: purple;}
