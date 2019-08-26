@@ -141,6 +141,11 @@ class Team
     }
 
     public function rename($new_name) {
+        
+/* #######################################################
+* Check here for adding Seasons Played and Wants to Retire
+*/
+        
         /*
          * Renames team.
          */
