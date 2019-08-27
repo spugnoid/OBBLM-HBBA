@@ -5,7 +5,9 @@
 */
 $upgradeSQLs = array(
     // future upgrade versions should be "to" version and should be integers, rather than "from-to".
-    102 => array(
+    // 102 added to create new columns for seasons played and wants to retire flags
+    
+    '102' => array(
     SQLUpgrade::runIfColumnNOTExists('players', 'splayed', 'ALTER TABLE players ADD COLUMN splayed TINYINT SIGNED'),
         SQLUpgrade::runIfColumnNOTExists('players', 'w2retire', 'ALTER TABLE players ADD COLUMN w2retire BOOLEAN DEFAULT FALSE'),
     )
