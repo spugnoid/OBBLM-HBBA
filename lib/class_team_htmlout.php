@@ -437,9 +437,6 @@ class Team_HTMLOUT extends Team
 		 * Contains player information and menu(s) for skill choice.
 		 ******************************/
 		
-/* #######################################################
-* Addeded Seasons Played and Wants to Retire columns below
-*/
 		
 		title($team->name . (($team->is_retired) ? ' <font color="red"> (Retired)</font>' : ''));
 		$allowEdit = (isset($coach) && $coach)
@@ -463,9 +460,7 @@ class Team_HTMLOUT extends Team
 			'mv_mvp'    => array('desc' => 'MVP'),
 			'mv_spp'    => array('desc' => ($DETAILED) ? 'SPP/extra' : 'SPP', 'nosort' => ($DETAILED) ? true : false),
 			'value'     => array('desc' => $lng->getTrn('common/value'), 'kilo' => true, 'suffix' => 'k'),
-			'p_seasons' => array('desc' => 'Seasons'), // Added Seasons Played column to team page
-			'w_retire' => array('desc' => 'Retiring?'), // Added Wants to Retire flag to team page
-			
+						
 		);
 		echo "<a href=".urlcompile(T_URL_PROFILE,T_OBJ_TEAM,$this->team_id,false,false)."&amp;detailed=".(($DETAILED) ? 0 : 1).">".$lng->getTrn('profile/team/viewtoggle')."</a><br><br>\n";
 		HTMLOUT::sort_table(
