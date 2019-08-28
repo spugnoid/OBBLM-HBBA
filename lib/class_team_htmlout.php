@@ -436,6 +436,8 @@ class Team_HTMLOUT extends Team
 		 * ------------------
 		 * Contains player information and menu(s) for skill choice.
 		 ******************************/
+		
+		
 		title($team->name . (($team->is_retired) ? ' <font color="red"> (Retired)</font>' : ''));
 		$allowEdit = (isset($coach) && $coach)
 			? $coach->isMyTeam($team->team_id) || $coach->mayManageObj(T_OBJ_TEAM, $team->team_id)
@@ -458,6 +460,7 @@ class Team_HTMLOUT extends Team
 			'mv_mvp'    => array('desc' => 'MVP'),
 			'mv_spp'    => array('desc' => ($DETAILED) ? 'SPP/extra' : 'SPP', 'nosort' => ($DETAILED) ? true : false),
 			'value'     => array('desc' => $lng->getTrn('common/value'), 'kilo' => true, 'suffix' => 'k'),
+						
 		);
 		echo "<a href=".urlcompile(T_URL_PROFILE,T_OBJ_TEAM,$this->team_id,false,false)."&amp;detailed=".(($DETAILED) ? 0 : 1).">".$lng->getTrn('profile/team/viewtoggle')."</a><br><br>\n";
 		HTMLOUT::sort_table(
@@ -1429,7 +1432,7 @@ class Team_HTMLOUT extends Team
 			<?php
 									break;
 								/***************
-								 * Remove achived skills
+								 * Remove achieved skills
 								 **************/
 								case 'ach_skills':
 									echo $lng->getTrn('profile/team/box_admin/desc/ach_skills');

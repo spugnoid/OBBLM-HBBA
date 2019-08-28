@@ -1,0 +1,18 @@
+Add Wants to Retire function to Team Management menu.
+	Copy rename/renumber and modify to suit
+
+Add Accidental Retire/Unretire Player to Admin menu
+
+Add Seasons Played function to Team Management menu.
+	Allow to increment value by 1 only.
+
+Add Seasons Played Modify to Admin Menu.
+	Set actual value when coaches screw it up.
+
+
+
+--------------------
+So far, added Seasons Played and Wants to Retire columns to Team Page.
+
+
+
